@@ -1,0 +1,2 @@
+#!/bin/bash
+rustc uax31compare.rs && ./uax31compare tests.txt

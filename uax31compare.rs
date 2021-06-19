@@ -56,11 +56,13 @@ fn main() {
         Lang::Go(Go),
     ];
 
+    println!("| identifier | lang | ok? |");
+    println!("|------------|------|-----|");
     for line in BufReader::new(File::open(input).unwrap()).lines() {
         let line = line.unwrap();
         for lang in &langs {
             let ok = lang.test(&line);
-            println!("{}\t{}\t{:?}", line, lang.name(), ok);
+            println!("| {} | {} | {:?} |", line, lang.name(), ok);
         }
     }
 }
